@@ -1,4 +1,4 @@
-import Hapi, { server } from '@hapi/hapi';
+import Hapi from '@hapi/hapi';
 import routes from './routes';
 import { db } from './database';
 

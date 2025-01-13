@@ -1,9 +1,14 @@
-import { fakeListing } from "./fake-data";
+import { db } from "../database";
 
 export const getAllListingsRoute = {
     method: 'GET',
     path: '/api/listings',
-    handler: (req, h) => {
-        return fakeListing;
+    handler: async (req, h) => {
+        console.log("GET request to /api/listings");
+        
+        const { results } = await db.query(
+            'SELECT * FROM listings'
+        );
+        return results;
     }
 }
